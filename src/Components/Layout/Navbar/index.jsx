@@ -1,17 +1,72 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { elvoraLogo2 } from "../../../Constants";
+import { FaBars } from "react-icons/fa";
 
 export default function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+    };
+  }, []);
+
   return (
     <nav className='bg-gray-800 py-4 fixed top-0 left-0 w-full z-50'>
-      <div className='container mx-auto flex justify-between items-center'>
+      <div className='container mx-auto flex justify-between items-center px-4 md:px-0'>
+        {/* Logo */}
         <div className='logo'>
-          <h1 className='text-2xl text-white font-bold'>Logo</h1>
+          <img
+            className='w-22 h-12'
+            src={elvoraLogo2}
+            alt='Logo'
+          />
         </div>
-        <ul className='flex items-center space-x-4'>
+
+        {/* Hamburger Menu */}
+        <button
+          ref={buttonRef}
+          className='text-white md:hidden focus:outline-none'
+          onClick={toggleMenu}
+        >
+          <FaBars className='h-6 w-6' />
+        </button>
+
+        {/* Menu Items */}
+        <ul
+          ref={menuRef}
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } md:flex md:items-center md:space-x-4 absolute md:static bg-gray-800 w-full md:w-auto left-0 top-full md:top-auto py-4 md:py-0`}
+        >
           <li>
             <a
               href='#'
-              className='text-white hover:text-gray-300 transition duration-300'
+              className='text-white block px-4 py-2 md:py-0 hover:text-gray-300 transition duration-300'
             >
               Home
             </a>
@@ -19,18 +74,19 @@ export default function NavBar() {
           <li className='relative group'>
             <a
               href='#'
-              className='text-white hover:text-gray-300 transition duration-300'
+              className='text-white block px-4 py-2 md:py-0 hover:text-gray-300 transition duration-300'
             >
               Our Services
             </a>
 
-            <ul className='absolute left-0 bg-gray-800 py-1 w-48 hidden group-hover:block'>
+            {/* Dropdown Menu */}
+            <ul className='absolute left-0 top-full bg-gray-800 py-2 w-48 hidden group-hover:flex flex-col shadow-lg z-10'>
               <li className='py-2 px-4 hover:bg-gray-700'>
                 <a
                   href='#'
                   className='text-white hover:text-yellow-600 transition duration-300'
                 >
-                  Catering and lobby services
+                  Catering and Lobby Services
                 </a>
               </li>
               <li className='py-2 px-4 hover:bg-gray-700'>
@@ -38,7 +94,7 @@ export default function NavBar() {
                   href='#'
                   className='text-white hover:text-yellow-600 transition duration-300'
                 >
-                  Services of rooms and units
+                  Services of Rooms and Units
                 </a>
               </li>
               <li className='py-2 px-4 hover:bg-gray-700'>
@@ -46,7 +102,7 @@ export default function NavBar() {
                   href='#'
                   className='text-white hover:text-yellow-600 transition duration-300'
                 >
-                  Transportation services
+                  Transportation Services
                 </a>
               </li>
               <li className='py-2 px-4 hover:bg-gray-700'>
@@ -54,7 +110,8 @@ export default function NavBar() {
                   href='#'
                   className='text-white hover:text-yellow-600 transition duration-300'
                 >
-                  Management services and support for daily needs
+                  Management Services and Support for Daily
+                  Needs
                 </a>
               </li>
             </ul>
@@ -62,7 +119,7 @@ export default function NavBar() {
           <li>
             <a
               href='#'
-              className='text-white hover:text-gray-300 transition duration-300'
+              className='text-white block px-4 py-2 md:py-0 hover:text-gray-300 transition duration-300'
             >
               About Us
             </a>
@@ -70,7 +127,7 @@ export default function NavBar() {
           <li>
             <a
               href='#'
-              className='text-white hover:text-gray-300 transition duration-300'
+              className='text-white block px-4 py-2 md:py-0 hover:text-gray-300 transition duration-300'
             >
               Reservation & Contact Us
             </a>
