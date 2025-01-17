@@ -6,9 +6,10 @@ export { elvoraLogo, elvoraLogo2 }
 
 
 // Home Page section's
-import Hero from "../Components/Layout/Hero"
+import Hero from "../Components/Pages/HomePage/Hero"
 import NavBar from "../Components/Layout/Navbar";
-import ServicesCards from "../Components/Common/ServicesCards";
+import ServicesCards from "../Components/Pages/HomePage/ServicesCards";
+import ContactUs from "../Components/Pages/HomePage/ContactUs"
 import Footer from "../Components/Layout/Footer";
 
-export {Hero, NavBar, ServicesCards, Footer}
+export {Hero, NavBar, ServicesCards, ContactUs, Footer}
