@@ -21,7 +21,7 @@ export default function ContactUs() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const mailtoLink = `mailto:mohammadamindf@gmail.com?subject=Message from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
+    const mailtoLink = `mailto: *** ?subject=Message from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
     
     window.location.href = mailtoLink;
 
