@@ -1,5 +1,5 @@
 import React from "react";
-import services from "../../../Constants/services.js";
+import services from "../../../../Constants/services.js";
 
 export default function ServicesCards() {
   return (
