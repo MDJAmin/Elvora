@@ -71,34 +71,34 @@ export default function NavBar() {
 
             {/* Dropdown Menu */}
             <ul className="absolute left-0 top-full bg-gray-800 py-2 w-48 hidden group-hover:flex flex-col shadow-lg z-10">
-              <li className="py-2 px-4 hover:bg-gray-700">
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
                   href="#"
-                  className="text-white hover:text-[#878127] transition duration-300"
+                  className="text-white transition duration-300"
                 >
                   Catering and Lobby Services
                 </a>
               </li>
-              <li className="py-2 px-4 hover:bg-gray-700">
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
                   href="#"
-                  className="text-white hover:text-[#878127] transition duration-300"
+                  className="text-white transition duration-300"
                 >
                   Services of Rooms and Units
                 </a>
               </li>
-              <li className="py-2 px-4 hover:bg-gray-700">
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
                   href="#"
-                  className="text-white hover:text-[#878127] transition duration-300"
+                  className="text-white transition duration-300"
                 >
                   Transportation Services
                 </a>
               </li>
-              <li className="py-2 px-4 hover:bg-gray-700">
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
                   href="#"
-                  className="text-white hover:text-[#878127] transition duration-300"
+                  className="text-white transition duration-300"
                 >
                   Management Services and Support for Daily
                   Needs
