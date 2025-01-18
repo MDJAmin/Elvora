@@ -1,11 +1,11 @@
 import React from "react";
 import HeroImg from "../../../../Assets/Images/HeroSectionImg.jpg";
 import { useLanguage } from "../../../../Context/LanguageContext";
-import translationsHomePage from "../../../../Constants/translations";
+import heroTranslation from "../../../../Constants/heroTranslations";
 
 export default function Hero() {
   const { language } = useLanguage(); 
-  const t = (key) => translationsHomePage[language][key];
+  const t = (key) => heroTranslation[language][key];
 
   return (
     <section className="relative h-screen z-40">
