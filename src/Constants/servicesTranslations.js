@@ -41,7 +41,6 @@ const servicesTranslations = {
     managementDescription:
       "استفد من خدمات الإدارة الاحترافية والدعم الشخصي لتلبية احتياجاتك اليومية.",
   },
-  // Add more languages here
 };
 
 export default servicesTranslations;
