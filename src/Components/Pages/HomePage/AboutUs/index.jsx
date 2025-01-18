@@ -39,7 +39,8 @@ export default function AboutUs() {
               <li>
                 <strong className="text-[#878127]">{t("phone")}:</strong>{" "}
                 <a
-                  href={`tel:${t("phoneLink")}`}
+                  href="#"
+                  // href={`tel:${t("phoneLink")}`}
                   className="hover:text-[#c6b035] transition duration-300"
                 >
                   {t("phoneLink")}
@@ -48,7 +49,8 @@ export default function AboutUs() {
               <li>
                 <strong className="text-[#878127]">{t("email")}:</strong>{" "}
                 <a
-                  href={`mailto:${t("emailLink")}`}
+                  href="#"
+                  // href={`mailto:${t("emailLink")}`}
                   className="hover:text-[#c6b035] transition duration-300"
                 >
                   {t("emailLink")}
@@ -57,7 +59,8 @@ export default function AboutUs() {
               <li>
                 <strong className="text-[#878127]">{t("instagram")}:</strong>{" "}
                 <a
-                  href={`https://www.instagram.com/${t("instagramLink")}`}
+                  href="#"
+                  // href={`https://www.instagram.com/${t("instagramLink")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c6b035] transition duration-300"
@@ -68,7 +71,8 @@ export default function AboutUs() {
               <li>
                 <strong className="text-[#878127]">{t("website")}:</strong>{" "}
                 <a
-                  href={`https://${t("websiteLink")}`}
+                  href="#"
+                  // href={`https://${t("websiteLink")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c6b035] transition duration-300"

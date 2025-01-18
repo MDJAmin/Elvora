@@ -27,7 +27,7 @@ export default function Hero() {
           {t("heroDescription")}
         </p>
         <a
-          href="#about-us"
+          href="#"
           className="bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-lg text-lg transition duration-300"
         >
           {t("learnMore")}
