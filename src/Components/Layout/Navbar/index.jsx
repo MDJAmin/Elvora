@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { elvoraLogo2 } from "../../../Constants";
 import { FaBars } from "react-icons/fa";
 import { useLanguage } from "../../../Context/LanguageContext"; 
-import translationsHomePage from "../../../Constants/translations";
+import navBarTranslation from "../../../Constants/navBarTranslation";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +36,7 @@ export default function NavBar() {
     };
   }, []);
 
-  const t = (key) => translationsHomePage[language][key]; 
+  const t = (key) => navBarTranslation[language][key]; 
 
   return (
     <nav className="bg-gray-800 py-4 fixed top-0 left-0 w-full z-50">
