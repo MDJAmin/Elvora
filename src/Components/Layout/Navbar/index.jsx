@@ -1,14 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import { elvoraLogo2 } from "../../../Constants";
 import { FaBars } from "react-icons/fa";
+import { useLanguage } from "../../../Context/LanguageContext"; 
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
+  const { language, setLanguage } = useLanguage(); 
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLanguageChange = (selectedLang) => {
+    setLanguage(selectedLang); 
   };
 
   useEffect(() => {
@@ -23,37 +29,62 @@ export default function NavBar() {
       }
     };
 
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
+  const translations = {
+    English: {
+      home: "Home",
+      services: "Our Services",
+      about: "About Us",
+      reservation: "Reservation & Contact Us",
+      catering: "Catering and Lobby Services",
+      rooms: "Services of Rooms and Units",
+      transportation: "Transportation Services",
+      management: "Management Services and Support for Daily Needs",
+    },
+    Persian: {
+      home: "خانه",
+      services: "خدمات ما",
+      about: "درباره ما",
+      reservation: "رزرو و تماس با ما",
+      catering: "خدمات پذیرایی و لابی",
+      rooms: "خدمات اتاق ها و واحد ها",
+      transportation: "خدمات حمل و نقل",
+      management: "خدمات مدیریت و پشتیبانی نیازهای روزانه",
+    },
+    Arabic: {
+      home: "الرئيسية",
+      services: "خدماتنا",
+      about: "معلومات عنا",
+      reservation: "الحجز والتواصل معنا",
+      catering: "خدمات الضيافة والردهة",
+      rooms: "خدمات الغرف والوحدات",
+      transportation: "خدمات النقل",
+      management: "إدارة ودعم الاحتياجات اليومية",
+    },
+  };
+
+  const t = (key) => translations[language][key]; // Helper for translations
+
   return (
-    <nav className='bg-gray-800 py-4 fixed top-0 left-0 w-full z-50'>
-      <div className='container mx-auto flex justify-between items-center px-4 md:px-0'>
+    <nav className="bg-gray-800 py-4 fixed top-0 left-0 w-full z-50">
+      <div className="container mx-auto flex justify-between items-center px-4 md:px-0">
         {/* Logo */}
-        <div className='logo'>
-          <img
-            className='w-22 h-12'
-            src={elvoraLogo2}
-            alt='Logo'
-          />
+        <div className="logo">
+          <img className="w-22 h-12" src={elvoraLogo2} alt="Logo" />
         </div>
 
         {/* Hamburger Menu */}
         <button
           ref={buttonRef}
-          className='text-white md:hidden focus:outline-none'
+          className="text-white md:hidden focus:outline-none"
           onClick={toggleMenu}
         >
-          <FaBars className='h-6 w-6' />
+          <FaBars className="h-6 w-6" />
         </button>
 
         {/* Menu Items */}
@@ -65,72 +96,99 @@ export default function NavBar() {
         >
           <li>
             <a
-              href='#'
-              className='text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300'
+              href="#"
+              className="text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300"
             >
-              Home
+              {t("home")}
             </a>
           </li>
-          <li className='relative group'>
+          <li className="relative group">
             <a
-              href='#'
-              className='text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300'
+              href="#"
+              className="text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300"
             >
-              Our Services
+              {t("services")}
             </a>
 
             {/* Dropdown Menu */}
-            <ul className='absolute left-0 top-full bg-gray-800 py-2 w-48 hidden group-hover:flex flex-col shadow-lg z-10'>
-              <li className='py-2 px-4 hover:bg-gray-700 cursor-pointer'>
+            <ul className="absolute left-0 top-full bg-gray-800 py-2 w-48 hidden group-hover:flex flex-col shadow-lg z-10">
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
-                  href='#'
-                  className='text-white transition duration-300'
+                  href="#"
+                  className="text-white transition duration-300"
                 >
-                  Catering and Lobby Services
+                  {t("catering")}
                 </a>
               </li>
-              <li className='py-2 px-4 hover:bg-gray-700 cursor-pointer'>
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
-                  href='#'
-                  className='text-white transition duration-300'
+                  href="#"
+                  className="text-white transition duration-300"
                 >
-                  Services of Rooms and Units
+                  {t("rooms")}
                 </a>
               </li>
-              <li className='py-2 px-4 hover:bg-gray-700 cursor-pointer'>
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
-                  href='#'
-                  className='text-white transition duration-300'
+                  href="#"
+                  className="text-white transition duration-300"
                 >
-                  Transportation Services
+                  {t("transportation")}
                 </a>
               </li>
-              <li className='py-2 px-4 hover:bg-gray-700 cursor-pointer'>
+              <li className="py-2 px-4 hover:bg-gray-700 cursor-pointer">
                 <a
-                  href='#'
-                  className='text-white transition duration-300'
+                  href="#"
+                  className="text-white transition duration-300"
                 >
-                  Management Services and Support for Daily
-                  Needs
+                  {t("management")}
                 </a>
               </li>
             </ul>
           </li>
           <li>
             <a
-              href='#'
-              className='text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300'
+              href="#"
+              className="text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300"
             >
-              About Us
+              {t("about")}
             </a>
           </li>
           <li>
             <a
-              href='#'
-              className='text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300'
+              href="#"
+              className="text-white block px-4 py-2 md:py-0 hover:text-[#878127] transition duration-300"
             >
-              Reservation & Contact Us
+              {t("reservation")}
             </a>
+          </li>
+          {/* Language Selector */}
+          <li className="relative group">
+            <button
+              className="text-white px-4 py-2 hover:text-[#878127] transition duration-300 focus:outline-none"
+            >
+              {language}
+            </button>
+            <ul className="absolute left-0 top-full bg-gray-800 py-2 w-36 hidden group-hover:flex flex-col shadow-lg z-10">
+              <li
+                className="py-2 px-4 text-white hover:bg-gray-700 cursor-pointer"
+                onClick={() => handleLanguageChange("English")}
+              >
+                English
+              </li>
+              <li
+                className="py-2 px-4 text-white hover:bg-gray-700 cursor-pointer"
+                onClick={() => handleLanguageChange("Persian")}
+              >
+                فارسی
+              </li>
+              <li
+                className="py-2 px-4 text-white hover:bg-gray-700 cursor-pointer"
+                onClick={() => handleLanguageChange("Arabic")}
+              >
+                عربي
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
