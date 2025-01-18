@@ -1,4 +1,4 @@
-const translationsAboutUs = {
+const aboutUsTranslations = {
     English: {
       title: "About Us",
       description:
@@ -76,5 +76,5 @@ const translationsAboutUs = {
     },
   };
   
-  export default translationsAboutUs;
+  export default aboutUsTranslations;
   

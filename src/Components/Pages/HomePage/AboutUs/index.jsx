@@ -1,10 +1,10 @@
 import React from "react";
 import { useLanguage } from "../../../../Context/LanguageContext";
-import translationsAboutUs from "../../../../Constants/translationsAboutUs";
+import aboutUsTranslations from "../../../../Constants/aboutUsTranslations";
 
 export default function AboutUs() {
   const { language } = useLanguage();
-  const t = (key) => translationsAboutUs[language][key];
+  const t = (key) => aboutUsTranslations[language][key];
 
   return (
     <section className="bg-gray-800 py-12">
