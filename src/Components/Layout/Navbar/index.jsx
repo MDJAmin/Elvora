@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { elvoraLogo2 } from "../../../Constants";
 import { FaBars } from "react-icons/fa";
 import { useLanguage } from "../../../Context/LanguageContext"; 
+import translationsHomePage from "../../../Constants/translations";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,40 +36,7 @@ export default function NavBar() {
     };
   }, []);
 
-  const translations = {
-    English: {
-      home: "Home",
-      services: "Our Services",
-      about: "About Us",
-      reservation: "Reservation & Contact Us",
-      catering: "Catering and Lobby Services",
-      rooms: "Services of Rooms and Units",
-      transportation: "Transportation Services",
-      management: "Management Services and Support for Daily Needs",
-    },
-    Persian: {
-      home: "خانه",
-      services: "خدمات ما",
-      about: "درباره ما",
-      reservation: "رزرو و تماس با ما",
-      catering: "خدمات پذیرایی و لابی",
-      rooms: "خدمات اتاق ها و واحد ها",
-      transportation: "خدمات حمل و نقل",
-      management: "خدمات مدیریت و پشتیبانی نیازهای روزانه",
-    },
-    Arabic: {
-      home: "الرئيسية",
-      services: "خدماتنا",
-      about: "معلومات عنا",
-      reservation: "الحجز والتواصل معنا",
-      catering: "خدمات الضيافة والردهة",
-      rooms: "خدمات الغرف والوحدات",
-      transportation: "خدمات النقل",
-      management: "إدارة ودعم الاحتياجات اليومية",
-    },
-  };
-
-  const t = (key) => translations[language][key]; // Helper for translations
+  const t = (key) => translationsHomePage[language][key]; 
 
   return (
     <nav className="bg-gray-800 py-4 fixed top-0 left-0 w-full z-50">
@@ -162,7 +130,6 @@ export default function NavBar() {
               {t("reservation")}
             </a>
           </li>
-          {/* Language Selector */}
           <li className="relative group">
             <button
               className="text-white px-4 py-2 hover:text-[#878127] transition duration-300 focus:outline-none"
@@ -195,3 +162,7 @@ export default function NavBar() {
     </nav>
   );
 }
+
+
+
+

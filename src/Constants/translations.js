@@ -1,21 +1,46 @@
-export const translations = {
-    English: {
-      home: "Home",
-      services: "Our Services",
-      about: "About Us",
-      contact: "Reservation & Contact Us",
-    },
-    Persian: {
-      home: "خانه",
-      services: "خدمات ما",
-      about: "درباره ما",
-      contact: "رزرو و تماس با ما",
-    },
-    Arabic: {
-      home: "الرئيسية",
-      services: "خدماتنا",
-      about: "معلومات عنا",
-      contact: "الحجز والتواصل",
-    },
-  };
-  
+const translationsHomePage = {
+  English: {
+    home: "Home",
+    services: "Our Services",
+    about: "About Us",
+    reservation: "Reservation & Contact Us",
+    catering: "Catering and Lobby Services",
+    rooms: "Services of Rooms and Units",
+    transportation: "Transportation Services",
+    management: "Management Services and Support for Daily Needs",
+    heroTitle: "Elvora",
+    heroSubtitle: "A Reliable Experienced",
+    heroDescription: "Delivering excellence and innovation in every solution.",
+    learnMore: "Learn More",
+  },
+  Persian: {
+    home: "خانه",
+    services: "خدمات ما",
+    about: "درباره ما",
+    reservation: "رزرو و تماس با ما",
+    catering: "خدمات پذیرایی و لابی",
+    rooms: "خدمات اتاق ها و واحد ها",
+    transportation: "خدمات حمل و نقل",
+    management: "خدمات مدیریت و پشتیبانی نیازهای روزانه",
+    heroTitle: "الورا",
+    heroSubtitle: "تجربه‌ای قابل اعتماد",
+    heroDescription: "ارائه برتری و نوآوری در هر راه‌حل.",
+    learnMore: "بیشتر بدانید",
+  },
+  Arabic: {
+    home: "الرئيسية",
+    services: "خدماتنا",
+    about: "معلومات عنا",
+    reservation: "الحجز والتواصل معنا",
+    catering: "خدمات الضيافة والردهة",
+    rooms: "خدمات الغرف والوحدات",
+    transportation: "خدمات النقل",
+    management: "إدارة ودعم الاحتياجات اليومية",
+    heroTitle: "إلفورا",
+    heroSubtitle: "خبرة موثوقة",
+    heroDescription: "تقديم التميز والابتكار في كل حل.",
+    learnMore: "تعرف على المزيد",
+  },
+};
+
+export default translationsHomePage;
