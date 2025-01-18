@@ -1,30 +1,36 @@
 import React from "react";
 import HeroImg from "../../../../Assets/Images/HeroSectionImg.jpg";
+import { useLanguage } from "../../../../Context/LanguageContext";
+import translationsHomePage from "../../../../Constants/translations";
 
 export default function Hero() {
+  const { language } = useLanguage(); 
+  const t = (key) => translationsHomePage[language][key];
+
   return (
-    <section className='relative h-screen z-40'>
+    <section className="relative h-screen z-40">
       <img
         src={HeroImg}
-        alt='Hero Section'
-        className='absolute inset-0 w-full h-full object-cover'
+        alt="Hero Section"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className='absolute inset-0 bg-black bg-opacity-50'></div>
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      <div className='relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 pt-16'>
-        <h2 className='text-4xl md:text-6xl font-bold mb-6'>
-          Elvora <br />
-          <br />A Reliable Experienced
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 pt-16">
+        <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          {t("heroTitle")}
+          <br />
+          <br />
+          {t("heroSubtitle")}
         </h2>
-        <p className='text-lg md:text-xl mb-8'>
-          Delivering excellence and innovation in every
-          solution.
+        <p className="text-lg md:text-xl mb-8">
+          {t("heroDescription")}
         </p>
         <a
-          href='#about-us'
-          className='bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-lg text-lg transition duration-300'
+          href="#about-us"
+          className="bg-gray-800 hover:bg-gray-700 text-white py-3 px-6 rounded-lg text-lg transition duration-300"
         >
-          Learn More
+          {t("learnMore")}
         </a>
       </div>
     </section>
