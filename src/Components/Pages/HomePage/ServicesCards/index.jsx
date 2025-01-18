@@ -1,11 +1,50 @@
 import React from "react";
-import services from "../../../../Constants/services.js";
+import { useLanguage } from "../../../../Context/LanguageContext"; 
+import servicesTranslations from "../../../../Constants/servicesTranslations"; 
+import image1 from "../../../../Assets/Images/Services (1).jpg";
+import image2 from "../../../../Assets/Images/Services (2).jpg";
+import image3 from "../../../../Assets/Images/Services (3).jpg";
+import image4 from "../../../../Assets/Images/Services (4).jpg";
 
 export default function ServicesCards() {
+  const { language } = useLanguage(); 
+
+  const t = (key) => servicesTranslations[language][key]; 
+
+  // Service data
+  const services = [
+    {
+      title: t("catering"),
+      description: t("cateringDescription"),
+      image: image1,
+    },
+    {
+      title: t("rooms"),
+      description: t("roomsDescription"),
+      image: image2,
+    },
+    {
+      title: t("transportation"),
+      description: t("transportationDescription"),
+      image: image3,
+    },
+    {
+      title: t("management"),
+      description: t("managementDescription"),
+      image: image4,
+    },
+  ];
+
   return (
     <section className="py-12 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">
+          {language === "English"
+            ? "Our Services"
+            : language === "Persian"
+            ? "خدمات ما"
+            : "خدماتنا"}
+        </h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 cursor-pointer">
           {services.map((service, index) => (
             <div
