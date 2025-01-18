@@ -19,7 +19,7 @@ export default function Footer() {
               alt="Elvora Logo"
               className="w-28 mb-4 ms-2"
             />
-            <p className="text-sm">A Reliable Experienced.</p>
+            <p className="text-sm">A Reliable Experience</p>
           </div>
 
           {/* Links Section */}

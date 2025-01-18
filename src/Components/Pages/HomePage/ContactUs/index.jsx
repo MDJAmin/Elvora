@@ -37,9 +37,9 @@ export default function ContactUs() {
   return (
     <section id="contact-us" className=" bg-gray-100 py-10">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-semibold mb-12">Contact Us</h2>
+        <h2 className="text-3xl font-semibold mb-12">Tell us your thoughts</h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-          <div className="flex flex-col items-start md:w-1/3">
+          {/* <div className="flex flex-col items-start md:w-1/3">
             <p className="text-2xl font-bold mb-2">Elvora Group</p>
             <p className="mb-2">
               <a
@@ -68,7 +68,7 @@ export default function ContactUs() {
                 www.elvoragroup.ir
               </a>
             </p>
-          </div>
+          </div> */}
 
           <div className="md:w-1/3 mt-6 md:mt-0">
             <form onSubmit={handleSubmit} className="space-y-4">
