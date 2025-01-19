@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { elvoraLogo2 } from "../../../Constants";
+import { EL } from "../../../Constants";
 import { FaBars } from "react-icons/fa";
 import { useLanguage } from "../../../Context/LanguageContext"; 
 import navBarTranslation from "../../../Constants/navBarTranslation";
@@ -43,7 +44,7 @@ export default function NavBar() {
       <div className="container mx-auto flex justify-between items-center px-4 md:px-0">
         {/* Logo */}
         <div className="logo">
-          <img className="w-22 h-12" src={elvoraLogo2} alt="Logo" />
+          <img className="w-22 h-12" src={EL} alt="Logo" />
         </div>
 
         {/* Hamburger Menu */}

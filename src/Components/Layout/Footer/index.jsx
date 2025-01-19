@@ -6,6 +6,7 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { elvoraLogo } from "../../../Constants";
+import { EL } from "../../../Constants";
 import footerTranslations from "../../../Constants/footerTranslations";
 import { useLanguage } from "../../../Context/LanguageContext";
 
@@ -20,7 +21,7 @@ export default function Footer() {
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
             <img
-              src={elvoraLogo}
+              src={EL}
               alt="Elvora Logo"
               className="w-28 mb-4 ms-2"
             />
