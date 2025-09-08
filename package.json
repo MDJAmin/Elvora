@@ -10,7 +10,7 @@
     "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview",
-    "homepage": "https://MDJAmin.github.io/Elvora"
+    "homepage": "https://MDJAmin.github.io/Elvora-React-Vite-Tailwind-Web-App"
   },
   "dependencies": {
     "react": "^18.3.1",
