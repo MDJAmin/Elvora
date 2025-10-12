@@ -145,12 +145,8 @@ abbr:where([title]) {
   text-decoration: underline dotted;
 }
 
-nav {
-  padding: 0 56px;
-}
-
-footer {
-  padding: 0 56px;
+.paddingNF{
+    padding: 0 56px;
 }
 h1,
 h2,

@@ -8993,7 +8993,7 @@ function pd() {
   }, []);
   const R = (Q) => dd[F][Q];
   return g.jsx("nav", {
-    className: "bg-gray-800 py-4 fixed top-0 left-0 w-full z-50",
+    className: "paddingNF bg-gray-800 py-4 fixed top-0 left-0 w-full z-50",
     children: g.jsxs("div", {
       className: "container mx-auto flex justify-between items-center px-4 md:px-0",
       children: [
@@ -9562,7 +9562,7 @@ function Cd() {
   const { language: h } = On(),
     v = Nd[h];
   return g.jsx("footer", {
-    className: "bg-gray-800 text-white py-10",
+    className: "paddingNF bg-gray-800 text-white py-10",
     children: g.jsxs("div", {
       className: "container mx-auto px-4",
       children: [
